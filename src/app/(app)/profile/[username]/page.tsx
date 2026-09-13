@@ -10,13 +10,14 @@ import { PostCard } from "@/components/feed/post-card";
 export default async function ProfilePage({
   params,
 }: {
-  params: { username: string };
+  params: Promise<{ username: string }>;
 }) {
   const session = await getServerSession();
   if (!session) return null;
+  const { username } = await params;
 
   const profile = await prisma.user.findUnique({
-    where: { username: params.username },
+    where: { username },
     select: {
       id: true,
       name: true,

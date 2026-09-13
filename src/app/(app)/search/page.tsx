@@ -8,12 +8,13 @@ import { FollowButton } from "@/components/feed/follow-button";
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: { q?: string };
+  searchParams: Promise<{ q?: string }>;
 }) {
   const session = await getServerSession();
   if (!session) return null;
 
-  const q = searchParams.q?.trim() ?? "";
+  const { q: searchQuery } = await searchParams;
+  const q = searchQuery?.trim() ?? "";
 
   const results = q
     ? await prisma.user.findMany({
