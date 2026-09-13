@@ -45,6 +45,10 @@ export const auth = betterAuth({
       },
     },
   },
+  trustedOrigins: [
+  "http://localhost:3000",
+  "https://facebook-with-claude-3b9h.vercel.app",
+],
 });
 
 export type Session = typeof auth.$Infer.Session;
