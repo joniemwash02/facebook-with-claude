@@ -47,7 +47,7 @@ export const auth = betterAuth({
   },
   trustedOrigins: [
   "http://localhost:3000",
-  "https://facebook-with-claude-git-main-joniemwash2-9579s-projects.vercel.app",
+  "https://facebook-with-claude.vercel.app",
 ],
 });
 
