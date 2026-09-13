@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Facebook-style palette: light grey app background, white cards, blue accent */
+    --background: 220 14% 93%;
+    --foreground: 220 9% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 9% 4%;
+
+    --primary: 214 89% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 13% 93%;
+    --secondary-foreground: 220 9% 4%;
+
+    --muted: 210 13% 93%;
+    --muted-foreground: 220 6% 44%;
+
+    --accent: 353 85% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 4 70% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 87%;
+    --input: 220 10% 87%;
+    --ring: 214 89% 52%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 15% 12%;
+    --foreground: 210 15% 94%;
+
+    --card: 220 14% 17%;
+    --card-foreground: 210 15% 94%;
+
+    --primary: 214 89% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 12% 22%;
+    --secondary-foreground: 210 15% 94%;
+
+    --muted: 220 12% 22%;
+    --muted-foreground: 220 8% 65%;
+
+    --accent: 353 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 4 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 12% 24%;
+    --input: 220 12% 24%;
+    --ring: 214 89% 58%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv11", "ss01";
+  }
+}
